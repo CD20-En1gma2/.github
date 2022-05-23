@@ -1,15 +1,23 @@
+dofile("utils.lua")
+
 Screen = {
     width = 1,
     height = 1
 }
 
-function Screen:new(obj, width, height)
+function Screen:new(obj)
     obj = obj or {}
     setmetatable(obj, self)
     self.__index = self
-    self.width = width
-    self.height = height
+    self.width, self.height = term.getSize()
     return obj
+end
+
+function Screen:reset()
+    term.setBackgroundColor(colors.black)
+    term.setTextColor(colors.white)
+    term.setCursorPos(1, 1)
+    term.clear()
 end
 
 Graphics = {
@@ -17,7 +25,9 @@ Graphics = {
     x = 0,
     y = 0,
     t = "wooooooah",
-    blink = false
+    screen = nil,
+    blink = false,
+    eventData = {""}
 }
 
 function Graphics:new (obj)
@@ -25,13 +35,14 @@ function Graphics:new (obj)
     setmetatable(obj, self)
     self.__index = self
     self.loop = true
+    self.screen = Screen:new()
     return obj
 end
 
 
 function Graphics:init()
     Graphics:onStart()
-    parallel.waitForAny (self:onLoop(), self:stopProgram())
+    parallel.waitForAny (self.stopProgram, self.onLoop)
     Graphics:onFinish()
 end
 
@@ -45,16 +56,16 @@ function Graphics:onStart()
 end
 
 function Graphics:onFinish()
-    print("onFinish")
+    self.screen:reset()
+    print("Finish")
 end
 
 function Graphics:onLoop()
-    while(self.loop)
+    while(Graphics.loop)
     do
-        self:printBackground()
-        self:middleText("test")
-        self:middleText("WOOOOOOAH")
-        sleep(1)
+        Graphics:printBackground()
+        Graphics:middleText("test")
+        Graphics:middleText("WOOOOOOAH")
         coroutine.yield()
     end
 end
@@ -70,8 +81,7 @@ function Graphics:printBackground()
         end
     end ]]--
     term.clear()
-    w, h = term.getSize()
-    term.setCursorPos(w, 0)
+    term.setCursorPos(self.screen.width, 0)
     if(self.blink)
     then
         local g = "false"
@@ -82,7 +92,7 @@ function Graphics:printBackground()
             g = "true"
         end
         print(g.." TEST "..term.getBackgroundColor())
-        term.setCursorPos(w, 0)
+        term.setCursorPos(self.screen.width, 0)
     end
     self.blink = not (self.blink)
 end
@@ -95,16 +105,14 @@ function Graphics:middleText(text)
 end
 
 function Graphics:stopProgram()
-    while (self.loop == true)
+    while (Graphics.loop == true)
     do
-        local tim = os.startTimer(0.0)
-        local eventData = {os.pullEvent()}
-        local event = eventData[1]
-        if ( event ~= "timer")
+        local tim = os.startTimer(0.2)
+        Graphics.activeEvents = {os.pullEvent()}
+        if ( hasValue(Graphics.activeEvents, "mouse_click"))
         then
-            self.t = self.t.."jjj"
-            self.loop = false
+            Graphics.t = Graphics.t.."jjj"
+            Graphics.loop = false
         end
-        sleep(1)
     end
 end
