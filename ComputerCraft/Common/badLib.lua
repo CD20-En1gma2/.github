@@ -34,8 +34,8 @@ end
 
 function Graphics:onLoop()
     paintutils.drawPixel(Graphics.x, Graphics.y)
-    Graphics.x++
-    Graphics.y++
+    Graphics.x = Graphics.x + 1
+    Graphics.y = Graphics.y + 1
 end
 
 function Graphics:onFinish()
