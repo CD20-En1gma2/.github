@@ -45,20 +45,33 @@ function Graphics:onStart()
 end
 
 function Graphics:onLoop()
+    self:printBackground()
+    self:middleText()
+end
+
+function Graphics:printBackground()
+    w, h = term.getSize()
     term.clear()
-    for i=0,term.getSize(),1
+    for i=0, w, 1
     do
-        for j=0, 5, 1
+        for j=0, h, 1
         do
             paintutils.drawPixel(i, j, colors.red)
         end
     end
-    print(" - x: "..Graphics.x.." - y: "..Graphics.y)
 end
+
+function Graphics:middleText(text)
+    w, h = term.getSize()
+    s = (#text)/2
+    term.setCursorPos(w/2-s, h/2)
+    term.write(text)
+end
+
 
 function Graphics:onFinish()
     print("onFinish")
 end
 
 local g = Graphics:new(nil)
-g:init(nil)
+g:init()
