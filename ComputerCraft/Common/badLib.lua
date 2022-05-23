@@ -46,7 +46,9 @@ end
 
 function Graphics:onLoop()
     self:printBackground()
-    self:middleText()
+    self:middleText("test")
+    self:middleText("WOOOOOOAH")
+    sleep(0.05)
 end
 
 function Graphics:printBackground()
