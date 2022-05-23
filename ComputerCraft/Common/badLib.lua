@@ -45,11 +45,13 @@ function Graphics:onStart()
 end
 
 function Graphics:onLoop()
-    paintutils.drawPixel(Graphics.x, Graphics.y, colors.red)
-    while(Graphics.x < 30)
+    term.clear()
+    for i=0,term.getSize(),1
     do
-        Graphics.x = Graphics.x + 1
-        Graphics.y = Graphics.y + 1
+        for j=0, 5, 1
+        do
+            paintutils.drawPixel(i, j, colors.red)
+        end
     end
     print(" - x: "..Graphics.x.." - y: "..Graphics.y)
 end
@@ -59,4 +61,4 @@ function Graphics:onFinish()
 end
 
 local g = Graphics:new(nil)
-g:init()
+g:init(nil)
