@@ -29,17 +29,18 @@ function Graphics:stop()
 end
 
 function Graphics:onStart()
-    return 
+    print("onStart")
 end
 
 function Graphics:onLoop()
-    paintutils.drawPixel(Graphics.x, Graphics.y)
+    paintutils.drawPixel(Graphics.x, Graphics.y, colors.red)
     Graphics.x = Graphics.x + 1
     Graphics.y = Graphics.y + 1
+    print("x: "..Graphics.x.." - y: "..Graphics.y)
 end
 
 function Graphics:onFinish()
-    return
+    print("onFinish")
 end
 
 local g = Graphics:new(nil)
