@@ -1,7 +1,5 @@
 dofile("utils.lua")
 
-counter = 0
-
 local colorsList = {
     colors.orange,
     colors.magenta,
@@ -42,7 +40,25 @@ Screen.new = function(monitor)
     return self
 end
 
+local Button = {}
+Button.new = function()
+    local self = {}
+    self.width = 5
+    self.height = 3
+    self.border = {1, 1, color=colors.red}
+    
+    self.draw = function(){
 
+    }
+    
+    self.onClick = function(){
+        
+    }
+    
+    return self
+end
+
+a, b = 0, 0
 
 -- Graphics object, most of the functions occur here
 Graphics = {}
@@ -215,14 +231,23 @@ Graphics.new = function(func) -- initializes the Graphics object
         self.onFinish()
     end
 
+    function self.middleText(text)
+        w, h = term.getSize()
+        s = (#(text))/2
+        term.setCursorPos(w/2-s, h/2)
+        term.write(text)
+    end
     
     return self
 end
 
+
+-- Default code for testing and showcasing purposes
+counter = 0
+
 function defaultPrint()
     return {
-        init =
-        function(args)
+        init = function(args)
             if(args[1].blink)
             then
                 local g = "false"
@@ -237,15 +262,8 @@ function defaultPrint()
             end
             args[1].blink = not (args[1].blink)
 
-            middleText("Default function test - Ticks: "..counter)
+            args[1].middleText("Default function test - Ticks: "..counter)
             counter = counter + 1
         end 
     }
-end
-
-function middleText(text)
-    w, h = term.getSize()
-    s = (#(text))/2
-    term.setCursorPos(w/2-s, h/2)
-    term.write(text)
 end
