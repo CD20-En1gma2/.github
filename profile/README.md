@@ -1,5 +1,5 @@
-# La Repository
-Questa repository è dedicata ai codici sviluppati per e durante la serie "*HorseCode*" del canale Twitch **ChannelD20**. Il contenuto varierà da script in Lua per la ComputerCraft, a programmi for-fun in Python, a programmi più complessi in Java.
+# L'Organizzazione
+Questa organizzazione è dedicata ai codici sviluppati per e durante la serie "*HorseCode*" del canale Twitch **ChannelD20**. Il contenuto varierà da script in Lua per la ComputerCraft, a programmi for-fun in Python, a programmi più complessi in Java.
 
 ## HorseCode
 HorseCode è uno dei programmi ricorrenti in **ChannelD20**, dedicato alla programmazione puntando a un misto tra cultura, nerding e intrattenimento.   
