@@ -1,5 +1,5 @@
 # What is this
-This page contains all the code developed for and during the live serie "*En1gma2*", streamed on the Twitch channel [*ChannelD20*](https://twitch.tv/channeld20). The content will vary from scripts in Lua for the Minecraft mod Computercraft, to for-fun programs developed in Python, games in C++ and more complex programs written in Java.
+This space contains all the code developed for and during the live serie "*En1gma2*", streamed on the Twitch channel [*ChannelD20*](https://twitch.tv/channeld20). The content will vary from scripts in Lua for the Minecraft mod Computercraft, to for-fun programs developed in Python, games in C++ and more complex programs written in Java.
 
 ## En1gma2
 *En1gma2* is one of the recurring series on **ChannelD20**, dedicated to programming and aimed to a mix between culture, nerding and entertainment. 
