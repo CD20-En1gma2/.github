@@ -1,10 +1,7 @@
-# L'Organizzazione
-Questa organizzazione è dedicata ai codici sviluppati per e durante la serie "*En1gma2*" del canale Twitch **ChannelD20**. Il contenuto varierà da script in Lua per la ComputerCraft, a programmi for-fun in Python, a programmi più complessi in Java.
+# What is this
+This page contains all the code developed for and during the live serie "*En1gma2*", streamed on the Twitch channel [*ChannelD20*](https://twitch.tv/channeld20). The content will vary from scripts in Lua for the Minecraft mod Computercraft, to for-fun programs developed in Python, games in C++ and more complex programs written in Java.
 
 ## En1gma2
-En1gma2 è uno dei programmi ricorrenti in **ChannelD20**, dedicato alla programmazione puntando a un misto tra cultura, nerding e intrattenimento.   
-Diretto da Lucius, membro fondatore del gruppo, talvolta fanno la loro presenza degli ospiti che portano il loro tocco al programma, sia nelle sezioni *Coding* che nelle sessioni *Chatting*.   
-Se foste capitati qui per caso senza conoscere il [canale](https://twitch.tv/channeld20), andate a dargli un'occhiata, non ve ne pentirete!   
-
-## ComputerCraft
-Esse quis reprehenderit aute sit anim anim proident voluptate laboris non. Fugiat reprehenderit reprehenderit velit minim fugiat excepteur aute magna tempor veniam. Et non ut occaecat incididunt. Mollit consectetur elit magna pariatur quis qui magna enim ut voluptate pariatur ex nostrud dolore.
+*En1gma2* is one of the recurring series on **ChannelD20**, dedicated to programming and aimed to a mix between culture, nerding and entertainment. 
+Hosted by Lucius, one of the founder members of the group, sometimes guests find their way in to bring their personal touch to the stream, be it in the *Coding* sections or in the *Chatting* sections.
+If you found yourself here without knowing the [channel](https://twitch.tv/channeld20), go take a look at it, you will not regret it!
